@@ -103,7 +103,7 @@ export const TaskBoard = () => {
         <Button
           onClick={() => setIsAddTaskOpen(true)}
           size="lg"
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-200"
+          className="h-14 w-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 dark:from-blue-600 dark:to-purple-700 dark:hover:from-blue-700 dark:hover:to-purple-800 shadow-lg hover:shadow-xl transition-all duration-200"
         >
           <Plus className="w-6 h-6" />
         </Button>

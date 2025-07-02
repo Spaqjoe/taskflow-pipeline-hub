@@ -20,15 +20,15 @@ export const TaskColumn = ({
   color 
 }: TaskColumnProps) => {
   const colorClasses = {
-    blue: "border-blue-200 bg-blue-50/50",
-    yellow: "border-yellow-200 bg-yellow-50/50",
-    green: "border-green-200 bg-green-50/50"
+    blue: "border-blue-200 bg-blue-50/50 dark:border-blue-800 dark:bg-blue-950/30",
+    yellow: "border-yellow-200 bg-yellow-50/50 dark:border-yellow-800 dark:bg-yellow-950/30",
+    green: "border-green-200 bg-green-50/50 dark:border-green-800 dark:bg-green-950/30"
   };
 
   const titleColors = {
-    blue: "text-blue-700",
-    yellow: "text-yellow-700",
-    green: "text-green-700"
+    blue: "text-blue-700 dark:text-blue-300",
+    yellow: "text-yellow-700 dark:text-yellow-300",
+    green: "text-green-700 dark:text-green-300"
   };
 
   return (
@@ -37,7 +37,7 @@ export const TaskColumn = ({
         <h3 className={`font-semibold text-lg ${titleColors[color]}`}>
           {title}
         </h3>
-        <span className="bg-white rounded-full px-3 py-1 text-sm font-medium text-gray-600">
+        <span className="bg-white dark:bg-gray-800 rounded-full px-3 py-1 text-sm font-medium text-gray-600 dark:text-gray-300">
           {tasks.length}
         </span>
       </div>
@@ -53,7 +53,7 @@ export const TaskColumn = ({
         ))}
         
         {tasks.length === 0 && (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
             <p className="text-sm">No tasks yet</p>
           </div>
         )}
