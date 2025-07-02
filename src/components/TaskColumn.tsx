@@ -32,17 +32,17 @@ export const TaskColumn = ({
   };
 
   return (
-    <div className={`rounded-xl border-2 ${colorClasses[color]} p-4 min-h-[500px]`}>
-      <div className="flex items-center justify-between mb-4">
-        <h3 className={`font-semibold text-lg ${titleColors[color]}`}>
+    <div className={`rounded-xl border-2 ${colorClasses[color]} p-3 sm:p-4 min-h-[400px] sm:min-h-[500px]`}>
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
+        <h3 className={`font-semibold text-base sm:text-lg ${titleColors[color]}`}>
           {title}
         </h3>
-        <span className="bg-white dark:bg-gray-800 rounded-full px-3 py-1 text-sm font-medium text-gray-600 dark:text-gray-300">
+        <span className="bg-white dark:bg-gray-800 rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-300">
           {tasks.length}
         </span>
       </div>
       
-      <div className="space-y-3">
+      <div className="space-y-2 sm:space-y-3">
         {tasks.map((task) => (
           <TaskCard
             key={task.id}
@@ -53,8 +53,8 @@ export const TaskColumn = ({
         ))}
         
         {tasks.length === 0 && (
-          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-            <p className="text-sm">No tasks yet</p>
+          <div className="text-center py-6 sm:py-8 text-gray-500 dark:text-gray-400">
+            <p className="text-xs sm:text-sm">No tasks yet</p>
           </div>
         )}
       </div>

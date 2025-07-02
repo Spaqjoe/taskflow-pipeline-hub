@@ -71,8 +71,8 @@ export const TaskBoard = () => {
   const doneTasks = tasks.filter(task => task.status === "done");
 
   return (
-    <div className="space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="space-y-6 sm:space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         <TaskColumn
           title="To Do"
           tasks={todoTasks}
@@ -99,13 +99,13 @@ export const TaskBoard = () => {
         />
       </div>
 
-      <div className="fixed bottom-8 right-8">
+      <div className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8">
         <Button
           onClick={() => setIsAddTaskOpen(true)}
           size="lg"
-          className="h-14 w-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 dark:from-blue-600 dark:to-purple-700 dark:hover:from-blue-700 dark:hover:to-purple-800 shadow-lg hover:shadow-xl transition-all duration-200"
+          className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 dark:from-blue-600 dark:to-purple-700 dark:hover:from-blue-700 dark:hover:to-purple-800 shadow-lg hover:shadow-xl transition-all duration-200"
         >
-          <Plus className="w-6 h-6" />
+          <Plus className="w-5 h-5 sm:w-6 sm:h-6" />
         </Button>
       </div>
 

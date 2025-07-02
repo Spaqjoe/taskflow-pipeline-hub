@@ -15,13 +15,13 @@ export const ThemeToggle = () => {
     >
       {theme === 'light' ? (
         <>
-          <Moon className="w-4 h-4 mr-2" />
-          Dark Mode
+          <Moon className="w-4 h-4 sm:mr-2" />
+          <span className="hidden sm:inline">Dark Mode</span>
         </>
       ) : (
         <>
-          <Sun className="w-4 h-4 mr-2" />
-          Light Mode
+          <Sun className="w-4 h-4 sm:mr-2" />
+          <span className="hidden sm:inline">Light Mode</span>
         </>
       )}
     </Button>

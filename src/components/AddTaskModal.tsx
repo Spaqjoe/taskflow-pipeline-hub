@@ -54,39 +54,41 @@ export const AddTaskModal = ({ isOpen, onClose, onAddTask }: AddTaskModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md mx-4 max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold">Add New Task</DialogTitle>
+          <DialogTitle className="text-lg sm:text-xl font-semibold">Add New Task</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="title">Task Title</Label>
+            <Label htmlFor="title" className="text-sm">Task Title</Label>
             <Input
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Enter task title..."
               required
+              className="text-sm"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="description">Description</Label>
+            <Label htmlFor="description" className="text-sm">Description</Label>
             <Textarea
               id="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Add task description..."
               rows={3}
+              className="text-sm resize-none"
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Priority</Label>
+              <Label className="text-sm">Priority</Label>
               <Select value={priority} onValueChange={(value: Task["priority"]) => setPriority(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -98,9 +100,9 @@ export const AddTaskModal = ({ isOpen, onClose, onAddTask }: AddTaskModalProps) 
             </div>
 
             <div className="space-y-2">
-              <Label>Status</Label>
+              <Label className="text-sm">Status</Label>
               <Select value={status} onValueChange={(value: Task["status"]) => setStatus(value)}>
-                <SelectTrigger>
+                <SelectTrigger className="text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -113,20 +115,21 @@ export const AddTaskModal = ({ isOpen, onClose, onAddTask }: AddTaskModalProps) 
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="dueDate">Due Date (Optional)</Label>
+            <Label htmlFor="dueDate" className="text-sm">Due Date (Optional)</Label>
             <Input
               id="dueDate"
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
+              className="text-sm"
             />
           </div>
 
           <div className="flex justify-end space-x-2 pt-4">
-            <Button type="button" variant="outline" onClick={handleClose}>
+            <Button type="button" variant="outline" onClick={handleClose} className="text-sm">
               Cancel
             </Button>
-            <Button type="submit" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700">
+            <Button type="submit" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-sm">
               Add Task
             </Button>
           </div>
