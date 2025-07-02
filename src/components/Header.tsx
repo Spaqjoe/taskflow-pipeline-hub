@@ -9,7 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
-  const { user, signOut } = useAuth();
+  const { user, signOut, isConfigured } = useAuth();
 
   const handleAuthClick = () => {
     if (user) {
@@ -57,7 +57,7 @@ export const Header = () => {
                 ) : (
                   <>
                     <User className="w-4 h-4 mr-2" />
-                    Login
+                    {isConfigured ? 'Login' : 'Login (Demo)'}
                   </>
                 )}
               </Button>
@@ -111,7 +111,7 @@ export const Header = () => {
                   ) : (
                     <>
                       <User className="w-4 h-4 mr-2" />
-                      Login
+                      {isConfigured ? 'Login' : 'Login (Demo)'}
                     </>
                   )}
                 </Button>
